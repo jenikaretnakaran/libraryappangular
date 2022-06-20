@@ -1,0 +1,50 @@
+
+<section class="intro">
+    <div class="bg-image-vertical h-100" style="background-color: #EFD3E4;
+            background-image: url(assets/images/addbooks.gif);
+          ">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+              <div class="card " style="border-radius: 1rem;">
+                <div class="card-body p-5 ">
+  
+                  <h1 class="mb-5 text-center">Update book</h1>
+  
+                  <form [formGroup]="form" (ngSubmit)="updateBooks(form.value)" >
+  
+                     <!-- image input -->
+                     <div class="form-outline mb-4">
+                      <input type=""  class="form-control" placeholder="Add image" formControlName="image" />
+                    </div>
+  
+                    <!-- book input -->
+                    <div class="form-outline mb-4">
+                      <input type="text"  class="form-control" placeholder="Enter Book name" formControlName="bookName" />
+                    </div>
+  
+                    <!-- author input -->
+                    <div class="form-outline mb-4">
+                      <input type="text"  class="form-control" placeholder="Enter Authorname" formControlName="authorName"/>
+  
+                    </div>
+  
+                    <!-- description input -->
+                    <div class="form-outline mb-4">
+                      <textarea class="form-control"  rows="4" placeholder="Add Description" formControlName="description"></textarea>
+  
+                    </div>
+  
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-secondary btn-rounded btn-block">Submit</button>
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

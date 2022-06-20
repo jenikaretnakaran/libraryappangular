@@ -1,0 +1,22 @@
+.burger{
+    position: relative;
+    top:-150px;
+    width:30px;
+  }
+  .heading {
+    position: relative;
+    top: 200px;
+    font-family:"Sacramento";
+    font-size: 80px;
+    color: #66BFBF;
+    line-height: 50px;
+    text-align: center;
+    
+  }
+  .heading button{
+      font-family: sans-serif;
+      position: relative;
+      top:5px;
+      margin-top:10px ;
+      padding: 10px;
+  }

@@ -1,0 +1,82 @@
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                <form class="mx-1 mx-md-4" [formGroup]="form" (ngSubmit)="onSignup(form.value)">
+
+                  <!--userName-->
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <!-- <i class="fas fa-user fa-lg me-3 fa-fw"></i> -->
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" class="form-control" placeholder="Enter your name"
+                        formControlName="userName" />
+                      <div
+                        *ngIf="form.get('userName').errors && (form.get('userName').dirty || form.get('userName').touched)"
+                        class="text-danger">
+                        <small *ngIf="form.get('userName').errors.required">Username is required</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--emailId-->
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <!-- <i class="fas fa-envelope fa-lg me-3 fa-fw"></i> -->
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" class="form-control" placeholder="Enter your Email"
+                        formControlName="emailId" />
+                      <div
+                        *ngIf="form.get('emailId').errors && (form.get('emailId').dirty || form.get('emailId').touched)"
+                        class="text-danger">
+                        <small *ngIf="form.get('emailId').errors.required">Email is required</small>
+                        <small *ngIf="form.get('emailId').errors.email">Email has invalid pattern</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--password-->
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <!-- <i class="fas fa-lock fa-lg me-3 fa-fw"></i> -->
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" class="form-control" placeholder="Enter your password"
+                        formControlName="password" />
+                      <div
+                        *ngIf="form.get('password').errors && (form.get('password').dirty || form.get('password').touched)"
+                        class="text-danger">
+                        <small *ngIf="form.get('password').errors.required">Password is required</small>
+                        <small *ngIf="form.get('password').errors.minlength">Password must be 6 characters long</small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--button-->
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-lg">Register</button>
+                  </div>
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                      class="fw-bold text-body" routerLink="/login"><u>Login here</u></a></p>
+
+                </form>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                <img src="assets/images/library.gif" class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
