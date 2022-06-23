@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,12 +25,19 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  onSignIn(data){
-    this.userservice.getSignIn(data)
-    .subscribe(res=>{
-      console.log(res);
-      this.router.navigate(['/books']);
+  getSignIn(data){
+    this.userservice.getSignIn(data).subscribe(
+      {
+      next:(res)=>
+      { 
+        this.router.navigate(['/books/content']);
+      },
+      error:(err)=>
+      {
+        console.log("error",err)
+        this.router.navigate(['/login']);
+        alert("Invalid Credentials")
+      }
     })
   }
-
 }

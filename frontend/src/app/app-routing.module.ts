@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { AddbookComponent } from './addbook/addbook.component';
 import { BooksComponent } from './books/books.component';
 import { BodyComponent } from './body/body.component';
+import { UpdatebookComponent } from './updatebook/updatebook.component';
 
 const routes: Routes = [
   {path:"",component:HomepageComponent},
@@ -17,6 +18,9 @@ const routes: Routes = [
              },
              {
               path:"content",component:BooksComponent
+             },
+             {
+              path:"update",component:UpdatebookComponent
              }
             ]
           }];

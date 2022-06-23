@@ -8,9 +8,26 @@ export class BooksService {
 
   constructor(public http:HttpClient) { }
 
-  getBooks(data)
+  addBooks(data)
   {
-    return this.http.post('http://localhost:3000/addbook',{"bookdata":data});
+    return this.http.post('http://localhost:3000/api/addbook',data);
+  }
+
+  getBook(id)
+  {
+    return this.http.get("http://localhost:3000/api/getbook/"+id)
+  }
+
+  updateBook(data){
+    return this.http.put("http://localhost:3000/api/update",data)
+  }
+
+  getBooks(){
+    return this.http.get('http://localhost:3000/api/books');
+  }
+
+  deleteBook(id){
+    return this.http.delete("http://localhost:3000/api/remove/"+id)
   }
   
 }

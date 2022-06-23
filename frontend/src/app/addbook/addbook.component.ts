@@ -29,10 +29,10 @@ export class AddbookComponent implements OnInit {
   };
 
   getBooks(data){
-    return this.booksservice.getBooks(data)
+    return this.booksservice.addBooks(data)
     .subscribe(res=>{
       console.log(data);
-      this.router.navigate(['/books']);
+      this.router.navigate(['/books/content']);
     })
   }
 }
